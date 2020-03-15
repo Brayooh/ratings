@@ -1,0 +1,76 @@
+{% load static%}
+<!--Navbar-->
+<nav 
+  class="navbar fixed-top navbar-expand-lg" style="background-color: rgb(185, 226, 255);">
+
+  <!-- Navbar brand -->
+    <a class="nav-brand text-dark" href="/">
+      <img style="width:49px; height: 30px;" src="{% static 'images/PRlogo2.png' %}">
+    </a>
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  {% if user.is_authenticated %}
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!-- Links -->
+
+    <ul class="navbar-nav mr-auto">
+      <!-- Dropdown -->
+      <li class="nav-link">
+        <a style="color: #1A91ED; font-weight: bold;" class="nav-link" href="{% url 'newproject' %}">
+          <h5>ADD PROJECT</h5>
+        </a>
+      </li>
+    </ul>
+
+      <!-- Links -->
+
+
+      <ul class="navbar-nav" style="float: right;">
+        <div style="color:#1A91ED;">
+          <form style=" color:#1A91ED" class="form-inline" action="{% url 'search' %}">
+            <div class="md-form my-0">
+              <input style="font-size: 13px;" class="form-control mr-sm-2" type="text" placeholder="Search"
+                aria-label="Search" name="post">
+            </div>
+          </form>
+        </div>
+      </ul>
+      <ul>
+      <li class="nav-item dropdown ml-2" style="color: #1A91ED; "> 
+        <a style="font-size: 15px;" class=" dropdown-toggle" id="" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Account</a>
+        <div class="dropdown-menu dropdown-primary text-dark" aria-labelledby="navbarDropdownMenuLink">
+          <a style="font-size: 12px;" class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+          <a style="font-size: 12px;" class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+        </div>
+      </li>
+    </ul>
+      {% else %}
+      <div class="btn btn-outline-primary btn-sm">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'login' %}">
+            <h5>Log in</h5>
+          </a>
+        </li>
+      </div>
+      <div class="btn btn-dark btn-sm">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'register' %}">
+            <h5>Sign Up</h5>
+          </a>
+        </li>
+      </div>
+
+    </ul>
+  </div>
+  {% endif %}
+  </div>
+
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
