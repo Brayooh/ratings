@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+  
+<h4>Projects of the day</h4>
+<section id="projects"> <br><br><br>
+  <div class="container-fluid mt-5 w-100">
+    <div style="color: rgb(24, 24, 24)" class="row pl-2 pr-2 ml-1 mr-1">
+      {% for project in projects %}
+      <div class="col-md-4" style="width: 100%;">
+        <div class="card-deck">
+          <div class="card mb-4" style="background-color: rgba(204, 230, 253, 0.605);">
+            <div class="view overlay zoom card-body">
+              <a href="/project/{{project.id}}">
+                <img style="width: 100%;" class="card-img-top img-fluid" src="{{project.image.url}}"
+                  alt="{{ project.project_name }}" height="300px">
+              </a>
+            </div>
+            <div class="card-body pr-2 pl-2 pr-2 mr-2">
+              <h4 class="card-title ml-4">~ {{ project.title }}</h4>
+            </div>
+            <div class="card-footer">
+              <div style="font-size: 10px; font-weight: bold; text-transform: capitalize;">
+
+                <img src="{{ project.author.profile.image.url }}" class="rounded-circle img-fluid"
+                  style="width: 30px; height: 30px;" ALIGN="left">
+                <p1 class="ml-3"> {{project.author}} </p1> <br>
+                <p2 class="ml-3">{{project.created_date|timesince}}</p2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+</body>
+{% endblock %}
