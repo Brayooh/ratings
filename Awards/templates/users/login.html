@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<br><br><br><br>
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-md-12 pt-5">
+      <div class="card" style="background-color: rgba(240, 248, 255, 0); font-size: small;">
+        <div class="card-body">
+
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <h1 class="text-center" style="color: rgb(66, 66, 66); font-size: 22px; font-weight: bold;">Login</h1><hr>
+              {{form|crispy}}
+            </div>
+            <div class="">
+              <input type="submit" class="btn btn-info" style="font-size: 8px;" value="Login">
+            </div>
+          </form>
+          <div class="border-bottom pt-3">
+            <p class="text-muted">Don't have an account?<a class="ml-2 text-info" href="{% url 'register' %}">Signup</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
