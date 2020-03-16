@@ -80,7 +80,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Projects.wsgi.application'
-
+DISABLE_COLLECTSTATIC
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -91,6 +91,7 @@ DATABASES = {
         'NAME': 'ratings',
         'USER': 'brayooh',
         'PASSWORD':'12345',
+
     }
 }
 # Password validation
