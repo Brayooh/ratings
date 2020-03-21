@@ -23,7 +23,7 @@
 ##### Open the command-line and run the following command to open a directory:
   - ```cd your preferred directory``` => ```cd Desktop```
 ##### Git clone the project on your current directory by:
-  - ```git clone https://github.com/IreneMercy/Project-Review.git```.
+  - ```git clone https://github.com/Brayooh/Project-Review.git```.
 ##### Move to your project directory:
 - ```cd Project-Review```.
 ##### Open the project on your terminal:
